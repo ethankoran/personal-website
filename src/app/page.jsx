@@ -86,13 +86,21 @@ export default function Home() {
           />
         </section>
         {/* About Section */}
-        <section id="about" className="min-h-screen bg-neutral-50 py-20">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl font-semibold text-center mb-10">About Me</h2>
-            <p className="text-lg text-center">
-              I'm a passionate developer with experience in building web applications using modern technologies. 
-              Here you can put more about your background, skills, and story.
-            </p>
+        <section id="about" className="min-h-screen bg-neutral-50 py-10">
+          <h2 className="text-3xl font-semibold text-center mb-10 text-slate-700">About Me</h2>
+          <div className="flex flex-col md:flex-row items-center justify-center px-6">
+            <div className="w-full md:w-1/2 mb-6 md:mb-0 pl-40">
+              <img 
+                src='/images/aboutmepic.jpeg'
+                alt="About Me"
+                className="w-full h-auto object-cover opacity-85"
+                />
+            </div>
+            <div className="max-w-6xl mx-auto px-6">
+              <p className="text-lg text-wrap">
+                Hi! My name is Ethan, and I am a current Junior at the University of Notre Dame studying Computer Science with a Minor in Engineering Coporate Practice, originally from Cincinnati, Ohio...
+              </p>
+            </div>
           </div>
         </section>
 
