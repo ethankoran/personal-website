@@ -3,8 +3,18 @@
 import { FloatingDock } from '@/components/FloatingDock'
 import { useEffect } from 'react'
 import Typed from 'typed.js'
+import Link from 'next/link'
+import { FloatingNav } from "@/components/FloatingNavBar";
 
 export default function Home() {
+  const navItems = [
+    { name: "Home", link: "#home" },
+    { name: "About", link: "#about"},
+    { name: "Experience", link: "#experience" },
+    { name: "Projects", link: "#projects" },
+    { name: "Contact", link: "#contact" }
+  ];
+
   const floating_dock_items = [
     {
       title: 'LinkedIn',
@@ -14,7 +24,7 @@ export default function Home() {
               alt='LinkedIn'
               className="w-full h-full rounded-full"
             />,
-    },
+          },
     {
       title: 'GitHub',
       href: 'https://github.com/ethankoran',
@@ -32,7 +42,7 @@ export default function Home() {
               alt='Email'
               className="w-full h-full object-cover rounded-full bg-white"  
             />,
-    },
+          },
     {
       title: 'Resume',
       href: '/Ethan_Koran_Resume.pdf',
@@ -45,8 +55,8 @@ export default function Home() {
   ];
 
   useEffect(() => {
-    const options = {
-      strings: ["Student", "Web Designer", "Software Developer", "Musician"],
+    const iamoptions = {
+      strings: ["Student", "Web Designer", "Software Developer", "Musician", "World Traveler"],
       typeSpeed: 100,
       backSpeed: 50,
       backDelay: 1000,
@@ -55,7 +65,7 @@ export default function Home() {
       showCursor: true
     };
 
-    const typed = new Typed(".typed", options);
+    const typed = new Typed(".typed", iamoptions);
 
     return () => {
       typed.destroy();
@@ -63,10 +73,9 @@ export default function Home() {
   }, []);
 
   return (
-    <main>
+    <main className="flex">
+      <FloatingNav navItems={navItems} className="" />
       <div className="bg-gray-100 text-gray-900">
-
-
         {/* Home Section */}
         <section 
           id="home" 
@@ -89,7 +98,7 @@ export default function Home() {
         <section id="about" className="min-h-screen bg-neutral-50 py-10">
           <h2 className="text-3xl font-semibold text-center mb-10 text-slate-700">About Me</h2>
           <div className="flex flex-col md:flex-row items-center justify-center px-6">
-            <div className="w-full md:w-1/2 mb-6 md:mb-0 pl-40">
+            <div className="w-full md:w-1/2 mb-6 md:mb-0">
               <img 
                 src='/images/aboutmepic.jpeg'
                 alt="About Me"
@@ -155,6 +164,7 @@ export default function Home() {
           </div>
         </section>
       </div>
+
     </main>
   )
 }
